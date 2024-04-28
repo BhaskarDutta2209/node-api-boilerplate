@@ -1,8 +1,9 @@
-require('../db/sequelize')
-const express = require('express');
+import '../db/sequelize.js';
+import express from 'express';
+import router from './routes/v1/index.js';
 
 const app = express();
 
-require('./routes/v1/index')(app);
+router(app);
 
-module.exports = app;
+export default app;
